@@ -1,38 +1,30 @@
 package u1ex02b;
 
 import java.io.IOException;
-import java.text.AttributedCharacterIterator.Attribute;
 
 import javax.xml.parsers.SAXParser;
 import javax.xml.parsers.SAXParserFactory;
+import javax.xml.parsers.ParserConfigurationException;
 
+import org.xml.sax.Attributes;
 import org.xml.sax.SAXException;
-import org.xml.sax.SAXParseException;
 import org.xml.sax.helpers.DefaultHandler;
 
-public class LibroHandler extends DefaultHandler {
-    private StringBuilder value;
+class LibroHandler extends DefaultHandler {
+    private StringBuilder value = new StringBuilder();
 
-    public LibroHandler() {
-        this.value = new StringBuilder();
+    @Override
+    public void startElement(String uri, String localName, String qName, Attributes attributes) throws SAXException {
+        value.setLength(0);
     }
 
     @Override
-    public void startElement(String uri, String localName, String qName, Attribute attribute) throws SAXException {
-        this.value.setLength(0);
-        if (qName.equals("libro")) {
-            String añoString = attributes.getValue("año");
-            System.out.println("Atributo año: " + añoString);
-        }
+    public void characters(char[] ch, int start, int length) throws SAXException {
+        value.append(ch, start, length);
     }
 
     @Override
-    public void characters(char ch[], int start, int length) throws SAXException {
-        this.value.append(ch, start, length);
-    }
-
-    @Override
-    public void endElement(String uri, String qName, String localName) throws SAXException {
+    public void endElement(String uri, String localName, String qName) throws SAXException {
         switch (qName) {
             case "libro":
                 System.out.println("");
@@ -62,10 +54,9 @@ public class Principal {
             SAXParserFactory factory = SAXParserFactory.newInstance();
             SAXParser parser = factory.newSAXParser();
             LibroHandler handler = new LibroHandler();
-            parser.parse("libro.xml", handler);
+            parser.parse("libros.xml", handler);
         } catch (ParserConfigurationException | SAXException | IOException ex) {
-            System.out.println(ex.getMessage());
+            System.out.println("Error: " + ex.getMessage());
         }
     }
-
 }
