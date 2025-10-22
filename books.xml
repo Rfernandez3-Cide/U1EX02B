@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<books>
+    <book year="1992">
+        <title>Advanced Programming for the UNIX Environment</title>
+        <author>
+            <lastname>Stevens</lastname>
+            <firstname>W.</firstname>
+        </author>
+        <publisher>Addison-Wesley</publisher>
+        <price>65.95</price>
+    </book>
+    <book year="2000">
+        <title>Data on the Web</title>
+        <author>
+            <lastname>Abiteboul</lastname>
+            <firstname>Serge</firstname>
+        </author>
+        <author>
+            <lastname>Buneman</lastname>
+            <firstname>Peter</firstname>
+        </author>
+        <author>
+            <lastname>Suciu</lastname>
+            <firstname>Dan</firstname>
+        </author>
+        <publisher>Morgan Kaufmann Publishers</publisher>
+        <price>39.95</price>
+    </book>
+</books>
