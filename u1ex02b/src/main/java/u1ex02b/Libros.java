@@ -39,29 +39,29 @@ class LibroHandler extends DefaultHandler {
                 break;
             case "titulo":
                 System.out.println("Título del libro: " + texto);
-                Principal.escribirTxt(añoActual, "Título del libro: " + texto);
+                Libros.escribirTxt(añoActual, "Título del libro: " + texto);
                 break;
             case "apellido":
                 System.out.println("Apellido del autor: " + texto);
-                Principal.escribirTxt(añoActual, "Apellido del autor: " + texto);
+                Libros.escribirTxt(añoActual, "Apellido del autor: " + texto);
                 break;
             case "nombre":
                 System.out.println("Nombre del autor: " + texto);
-                Principal.escribirTxt(añoActual, "Nombre del autor: " + texto);
+                Libros.escribirTxt(añoActual, "Nombre del autor: " + texto);
                 break;
             case "editorial":
                 System.out.println("Editorial del libro: " + texto);
-                Principal.escribirTxt(añoActual, "Editorial del libro: " + texto);
+                Libros.escribirTxt(añoActual, "Editorial del libro: " + texto);
                 break;
             case "precio":
                 System.out.println("Precio del libro: " + texto);
-                Principal.escribirTxt(añoActual, "Precio del libro: " + texto);
+                Libros.escribirTxt(añoActual, "Precio del libro: " + texto);
                 break;
         }
     }
 }
 
-public class Principal {
+public class Libros {
     public static void main(String[] args) {
         try {
             SAXParserFactory factory = SAXParserFactory.newInstance();
